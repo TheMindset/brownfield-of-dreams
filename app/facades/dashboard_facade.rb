@@ -31,6 +31,14 @@ class DashboardFacade
     @bookmarks ||= @current_user.bookmarks
   end
 
+  def activate_account
+    if @current_user.activate == "true"
+      "Status: Activate"
+    else
+      "This account is not yet activate. Please check your email"
+    end
+  end
+
   private
 
   def service

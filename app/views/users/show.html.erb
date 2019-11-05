@@ -3,11 +3,7 @@
 
   <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
 
-  <% if current_user.activate == "true" %>
-    <h3> Status: Active </h3>
-  <% else %>
-    <h3> This account is not yet activate. Please check your email</h3>
-  <% end %>
+  <%= facade.activate_account %>
 
   <%= button_to 'Send an invitation', send_invitation_path, method: 'get', class: "btn btn-primary mb1 bg-teal" %>
 
