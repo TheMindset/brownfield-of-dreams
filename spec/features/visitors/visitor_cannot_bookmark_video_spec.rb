@@ -7,7 +7,7 @@ RSpec.describe "As a visitor", type: :feature do
 
     visit tutorial_path(tutorial)
 
-    expect(page).to have_content("You have login to bookmark videos.")
+    expect(page).to have_content("You must login before bookmark videos.")
   end
 
 end
