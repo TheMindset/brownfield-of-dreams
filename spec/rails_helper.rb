@@ -24,7 +24,6 @@ VCR.configure do |config|
   config.filter_sensitive_data("<YOUTUBE_API_KEY>") { ENV['YOUTUBE_API_KEY'] }
   config.filter_sensitive_data("<GITHUB_TOKEN_TEST>") { ENV['GITHUB_TOKEN_TEST'] }
   config.filter_sensitive_data("<GITHUB-API-KEY>") { ENV['GITHUB-API-KEY'] }
-
 end
 
 def stub_omniauth
