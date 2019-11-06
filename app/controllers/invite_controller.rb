@@ -7,7 +7,7 @@ class InviteController < ApplicationController
     if current_user.github_token.nil?
       flash[:error] = "You must be connected to Github to invite new users."
     else
-      user = find_github_user(current_user.github_token, params[:"github_nickname"])
+      user = find_github_user(current_user.github_token, params[:github_nickname])
       if user.keys.include?(:message) && user[:message] = "Not Found"
         flash[:error] = "Github user not found"
       elsif user[:email].nil?
