@@ -15,7 +15,7 @@ describe "As a user", :vcr do
   end
 
   it "#can send an invitation" do
-    fill_in "Github Handle", with: "TheMindset"
+    fill_in "github_nickname", with: "TheMindset"
     click_on "Send the invitation"
 
     expect(current_path).to eq(dashboard_path)
@@ -24,7 +24,7 @@ describe "As a user", :vcr do
   end
 
   it "#can't send an invitation" do
-    fill_in "Github Handle", with: "dzescgr"
+    fill_in "github_nickname", with: "dzescgr"
     click_on "Send the invitation"
 
     expect(current_path).to eq(dashboard_path)
