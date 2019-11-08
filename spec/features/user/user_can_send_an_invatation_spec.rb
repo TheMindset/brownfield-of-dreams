@@ -16,12 +16,12 @@ describe "As a user", :vcr do
   it "#can send an invitation with valid github_nickname" do
     @user.user_credentials.create!(token: ENV["GITHUB-API-KEY"], nickname: "TheMindset", website: "github")
 
-    fill_in "github_nickname", with: "TheMindset"
+    fill_in "github_nickname", with: "denispasin"
     click_on "Send the invitation"
 
     expect(current_path).to eq(dashboard_path)
 
-    expect(page).to have_content("The user you selected doesn't have an email associated with their account.")
+    expect(page).to have_content("Successfully sent the invitation!")
   end
 
   it "#can't send an invitation without valid github_nickname" do
