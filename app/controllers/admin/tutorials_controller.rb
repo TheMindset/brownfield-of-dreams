@@ -9,7 +9,6 @@ class Admin::TutorialsController < Admin::BaseController
     begin
       tutorial = Tutorial.create(tutorial_params)
       flash[:success] = "The tutorial has been created"
-      redirect_to tutorial_path(tutorial.id)
     rescue StandardError
       flash[:error] = "Something happen please retry!"
     end
@@ -32,7 +31,7 @@ class Admin::TutorialsController < Admin::BaseController
   def destroy
     tutorial = Tutorial.find(params[:id])
     tutorial.destroy
-    # redirect_to admin_dashboard_path
+    redirect_to admin_dashboard_path
   end
 
   private
