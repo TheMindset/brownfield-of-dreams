@@ -2,7 +2,7 @@
 
 class RegisterController < ApplicationController
   def create
-    user = User.find_by(activate: params[:code])
+    user = User.find_by(id: params[:code])
     if user.nil?
       flash[:error] = "User not found"
     else
