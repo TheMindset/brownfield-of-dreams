@@ -9,8 +9,8 @@ describe 'visitor visits video show page' do
 
     visit tutorial_path(tutorial)
 
-    click_on 'Bookmark'
+    expect(page).to_not have_content("Bookmark")
 
-    expect(page).to have_current_path(login_path, ignore_query: true)
+    expect(page).to have_link(href: login_path)
   end
 end
